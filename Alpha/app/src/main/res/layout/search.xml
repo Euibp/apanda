@@ -1,15 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchView"
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="21dp" />
+        android:id="@+id/space2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView"
+        android:layout_below="@+id/space2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        style="@style/Base.Widget.AppCompat.SearchView.ActionBar"
+        android:background="@color/colorPrimaryDark" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_below="@+id/searchView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/space3" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_below="@+id/space3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/space4" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_below="@+id/space3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/space4"
+        android:id="@+id/space5" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/space5"
+        android:layout_toLeftOf="@+id/space4"
+        android:layout_toStartOf="@+id/space4"
+        android:id="@+id/space6" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_below="@+id/space3"
+        android:layout_toRightOf="@+id/space5"
+        android:layout_toEndOf="@+id/space5" />
 
 </RelativeLayout>

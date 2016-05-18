@@ -13,9 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Login"
+        android:text="Nome do Aplicativo"
         android:id="@+id/MainText_Login"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -25,13 +25,11 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/MainText_Name"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="42dp"
         android:layout_gravity="right"
         android:layout_below="@+id/MainText_Login"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="40dp"
-        android:layout_marginEnd="40dp" />
+        android:layout_alignLeft="@+id/MainText_Login"
+        android:layout_alignStart="@+id/MainText_Login" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -66,10 +64,32 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Login"
         android:id="@+id/button"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/textView2"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/MainText_Password"
         android:layout_centerHorizontal="true" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_above="@+id/textView"
+        android:layout_marginBottom="19dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/space"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/space"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/space"
+        android:layout_alignEnd="@+id/space" />
 
 </RelativeLayout>
