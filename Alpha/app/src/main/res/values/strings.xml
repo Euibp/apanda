@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string-array name="Centros">
-    <item>Fundão</item>
+    <item>Cidade Universitária</item>
     <item>Praia Vermelha</item>
     <item>Xerem</item>
     <item>Macaé</item>
+    <item>Ifics</item>
+    <item>Esfa</item>
+    <item>Escola de Emfermagem Ana Nery</item>
     <item>Escola de Musica</item>
     <item>Escola de Direito</item>
     <item>Observatório do Valongo</item>
