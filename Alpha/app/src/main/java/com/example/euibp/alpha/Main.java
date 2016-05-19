@@ -30,6 +30,10 @@ public class Main extends AppCompatActivity {
         String username = usernameField.getText().toString();
         String password = passwordField.getText().toString();
         new requestLogin(this,erroText).execute(username,password);
+
+       /* if
+        Intent intent = new Intent(this, RequestSearch.class);
+         startActivity(intent);*/
      }
 
     public void createAcovnt(View view){
@@ -38,7 +42,6 @@ public class Main extends AppCompatActivity {
         //String message = editText.getText().toString();
        // intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
-        Log.d ("Alpha", "Clicou");
     }
 
 }

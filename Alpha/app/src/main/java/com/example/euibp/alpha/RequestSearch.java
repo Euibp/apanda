@@ -28,13 +28,12 @@ public class RequestSearch extends AppCompatActivity {
 
     String [] centros = new String[]{"Cidade Universitária","Praia Vermelha","Xérem","Macaé","Ifics","Esfa","Escola de Enfermagem Ana Nery","Escola de Musica","Escola de Direito","Observatório do Valongo"};
     String centrosText;
-
+    TextView erroText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        // String secretariasText;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
@@ -58,15 +57,18 @@ public class RequestSearch extends AppCompatActivity {
             }
         });
 
+        erroText = (TextView)findViewById(R.id.erroText);
+
         Intent intent = getIntent();
         if (intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            sqlSearch(query, centrosText);
+           /* sqlSearch(query, centrosText);*/
+            new rrSearch(this,erroText).execute(query,centrosText);
         }
     }
 
-    private void sqlSearch(String query,String centrosText) {
-        String link = "fokpekgporjgoirejhgoiçarjgopreçij";
+  /*  private void sqlSearch(String query,String centrosText) {
+        String link = "http://vamosnosajudar.890m.com/Hackathon/ProcurarBancoDados.php";
         try {
             String data = URLEncoder.encode("Centros", "UTF-8") + "=" + URLEncoder.encode(centrosText, "UTF-8");
             data += "&" + URLEncoder.encode("query", "UTF-8") + "=" + URLEncoder.encode(query, "UTF-8");
@@ -77,7 +79,7 @@ public class RequestSearch extends AppCompatActivity {
         }
         catch(Exception e) {
         }
-    }
+    }*/
 }
 
 

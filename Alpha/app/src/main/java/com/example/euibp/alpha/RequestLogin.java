@@ -10,6 +10,7 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.EditText;
@@ -37,29 +38,37 @@ public class requestLogin extends AsyncTask<String,Void,String>{
 
         String enderecoEmail = arg0[0];
         String password = arg0[1];
-        String link = "http://vamosnosajudar.890m.com/Hackathon/CriarConta.php";
+        String link = "http://vamosnosajudar.890m.com/Hackathon/Login.php";
   //      String link = "http://php.net/manual/pt_BR/reserved.variables.post.php";
         try {
             String data = URLEncoder.encode("enderecoEmail", "UTF-8") + "=" + URLEncoder.encode(enderecoEmail, "UTF-8");
             data += "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             BufferedReader reader = openPHP(link, data);
 
+            String in = reader.readLine();
 
-          String in = reader.readLine();
+
             Log.d("Alpha",in);
            if (in==null) {
                return ("erroDeLogin");
             }
-
+            in = reader.readLine();
+            Log.d("Alpha",in);
             return(in);
         } catch (Exception e) {
-            return new String("Exception: " + e.getMessage());
+            return null;
        }
     }
 
     @Override
-    protected void onPostExecute(String confirm){
-       this.erroText.setText("Login Válido");
+    protected void onPostExecute(String confirm) {
+        confirm = confirm.replaceAll("\\D+","");
+        if(confirm ==null || Float.parseFloat(confirm)<0){
+            this.erroText.setText("Login Inválido");
+        }else{
+            Intent intent = new Intent(context, RequestSearch.class);
+            context.startActivity(intent);
+        }
     }
 
     public static BufferedReader openPHP(String link,String data) throws Exception{

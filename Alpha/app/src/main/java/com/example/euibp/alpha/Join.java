@@ -33,19 +33,31 @@ public class Join extends AppCompatActivity {
         if(confirmField.getText().toString().equals(passwordField.getText().toString())) {
             String username = usernameField.getText().toString();
             String password = passwordField.getText().toString();
-            new requestLogin(this, erroText).execute(username, password);
+            new requestNewAccount(this, erroText).execute(username, password);
         }else{
             erroText.setText("Voce é um animal que não consegue colocar a mesma senha duas vezes");
         }
     }
 
-    public void returnMain(View view){
-        Intent intent = new Intent(this, Main.class);
-        // EditText editText = (EditText) findViewById(R.id.edit_message);
-        //String message = editText.getText().toString();
-        // intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
+ /*   public int functionErro(){
+        if(usernameField==null){
+            return(1); }
+        if(passwordField==null){
+            return(2);
+        }
+        if(confirmField==null) {
+            return(3);
+        }
+        if (confirmField.getText().toString().equals(passwordField.getText().toString())) {
+            return(4);
+        }
+        return(0);
+    }*/
 
-}
+        public void returnMain(View view){
+            Intent intent = new Intent(this, Main.class);
+            startActivity(intent);
+        }
+
+    }
 
