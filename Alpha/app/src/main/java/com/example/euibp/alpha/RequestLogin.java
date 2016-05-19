@@ -37,24 +37,22 @@ public class requestLogin extends AsyncTask<String,Void,String>{
 
         String enderecoEmail = arg0[0];
         String password = arg0[1];
- //       String link = "http://vamosnosajudar.890m.com/Hackathon/CriarConta.php";
-        String link = "http://php.net/manual/pt_BR/reserved.variables.post.php";
-        Log.d("Alpha","deu ruim");
+        String link = "http://vamosnosajudar.890m.com/Hackathon/CriarConta.php";
+  //      String link = "http://php.net/manual/pt_BR/reserved.variables.post.php";
         try {
             String data = URLEncoder.encode("enderecoEmail", "UTF-8") + "=" + URLEncoder.encode(enderecoEmail, "UTF-8");
             data += "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             BufferedReader reader = openPHP(link, data);
-            String in = reader.readLine();
-            if (in==null) {
-                Log.d("Alpha","deu ruim");
-                return ("erroDeLogin");
-            }
-            in = reader.readLine();
-            Log.d("Alpha","AQUIIIIIIIIIIIIIIIIII");
+
+
+          String in = reader.readLine();
             Log.d("Alpha",in);
+           if (in==null) {
+               return ("erroDeLogin");
+            }
+
             return(in);
         } catch (Exception e) {
-           Log.d("Alpha",e.getMessage());
             return new String("Exception: " + e.getMessage());
        }
     }
@@ -64,8 +62,8 @@ public class requestLogin extends AsyncTask<String,Void,String>{
        this.erroText.setText("Login Válido");
     }
 
-    public static BufferedReader openPHP(String link,String data){// throws Exception{
-       try {
+    public static BufferedReader openPHP(String link,String data) throws Exception{
+
            URL url = new URL(link);
            URLConnection conn = url.openConnection();
            conn.setDoOutput(true);
@@ -75,8 +73,7 @@ public class requestLogin extends AsyncTask<String,Void,String>{
            wire.close();
 
            return (new BufferedReader(new InputStreamReader(conn.getInputStream())));
-       }catch(Exception e) {Log.d("Alpha",e.toString());
-            return null;
-        }
+
+
     }
 }
