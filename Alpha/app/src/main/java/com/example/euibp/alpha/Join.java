@@ -30,6 +30,28 @@ public class Join extends AppCompatActivity {
 
     public void register(View view){
 
+      /*  switch(functionErro()){
+            case 0 :
+                String username = usernameField.getText().toString();
+                String password = passwordField.getText().toString();
+                new requestNewAccount(this, erroText).execute(username, password);
+                break;
+            case 1 :
+                erroText.setText("Email Inválido");
+                break;
+            case 2 :
+                erroText.setText("Senha Inválida");
+                break;
+            case 3 :
+                erroText.setText("Confirmação de Senha Inexistente");
+                break;
+            case 4 :
+                erroText.setText("Voce é um animal que não consegue colocar a mesma senha duas vezes");
+                break;
+            default:
+                erroText.setText("Erro Desconhecido");
+                break;
+        }*/
         if(confirmField.getText().toString().equals(passwordField.getText().toString())) {
             String username = usernameField.getText().toString();
             String password = passwordField.getText().toString();
@@ -39,20 +61,20 @@ public class Join extends AppCompatActivity {
         }
     }
 
- /*   public int functionErro(){
-        if(usernameField==null){
+    public int functionErro(){
+        if(usernameField.getText()==null){
             return(1); }
-        if(passwordField==null){
+        if(passwordField.getText()==null){
             return(2);
         }
-        if(confirmField==null) {
+        if(confirmField.getText()==null) {
             return(3);
         }
         if (confirmField.getText().toString().equals(passwordField.getText().toString())) {
             return(4);
         }
         return(0);
-    }*/
+    }
 
         public void returnMain(View view){
             Intent intent = new Intent(this, Main.class);
