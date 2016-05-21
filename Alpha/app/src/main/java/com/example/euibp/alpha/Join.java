@@ -30,7 +30,9 @@ public class Join extends AppCompatActivity {
 
     public void register(View view){
 
-      /*  switch(functionErro()){
+        //int eRRo = functionErro();
+
+        switch(functionErro()){
             case 0 :
                 String username = usernameField.getText().toString();
                 String password = passwordField.getText().toString();
@@ -51,29 +53,29 @@ public class Join extends AppCompatActivity {
             default:
                 erroText.setText("Erro Desconhecido");
                 break;
-        }*/
-        if(confirmField.getText().toString().equals(passwordField.getText().toString())) {
+        }
+        /*if(confirmField.getText().toString().equals(passwordField.getText().toString())) {
             String username = usernameField.getText().toString();
             String password = passwordField.getText().toString();
             new requestNewAccount(this, erroText).execute(username, password);
         }else{
             erroText.setText("Voce é um animal que não consegue colocar a mesma senha duas vezes");
-        }
+        }*/
     }
 
     public int functionErro(){
-        if(usernameField.getText()==null){
+        if(usernameField.getText().toString().equals("")){
             return(1); }
-        if(passwordField.getText()==null){
+        if(passwordField.getText().toString().equals("")){
             return(2);
         }
-        if(confirmField.getText()==null) {
+        if(confirmField.getText().toString().equals("")) {
             return(3);
         }
         if (confirmField.getText().toString().equals(passwordField.getText().toString())) {
-            return(4);
+            return(0);
         }
-        return(0);
+        return(4);
     }
 
         public void returnMain(View view){
